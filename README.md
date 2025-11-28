@@ -1,1 +1,155 @@
-# cineKids
+# **Projeto Integrados – Sistema de Catálogo de Filmes Infantil**
+
+### *Trabalho acadêmico — Desenvolvimento Full Stack (Frontend + Backend + Banco + Documentação)*
+
+Este repositório contém todas as etapas, artefatos, códigos e documentações produzidas durante o desenvolvimento do sistema de catálogo de filmes, seguindo o cronograma de 4 dias de entregas.
+
+O projeto foi desenvolvido como integrador entre as disciplinas desenvolvidas no 2º Semestre do Curso de Desenvolvimento de Sistemas no SENAI Gaspar Ricardo Junior - CFP 402 - Sorocaba/SP
+
+Professor Instrutor: [Vedilson Prado](https://github.com/vedilsonprado)
+
+---
+# 🧑‍💻 **Desenvolvedores:**
+Matheus Henrique Magalhaes Rodrigues Dev 12: [Matheus Henrique](https://github.com/magalhaes000)
+Rhyan Pyetro Alves dos Anjos Dev 24: [Rhyan Pyetro](https://github.com/Rhyanzin01)
+Thais Gimenez Siva Dev 27: [Thais Gimenez](https://github.com/thaasilvaa)
+Thayna Visentin Silva 28: [Thayná Visentin](https://github.com/devthaynasilva-star)
+Vitor Moreira Berganton Dev 32: [Vitor Moreira](https://github.com/devvitorberganton-pixel)
+
+---
+
+## 🛠️ Tecnologias e Ferramentas
+![Java](https://skillicons.dev/icons?i=java,spring,js,html,css,mysql)
+---
+
+# 📁 **Estrutura do Repositório**
+
+```
+projeto-filmes/
+├── backend/
+│   ├── src/main/java/com/cinekids/
+│   │   ├── CinekidsApplication.java
+│   │   ├── controller/
+│   │   │   ├── FilmeController.java
+│   │   │   └── GeneroController.java
+│   │   ├── model/
+│   │   │   ├── Filme.java
+│   │   │   └── Genero.java
+│   │   ├── repository/
+│   │   │   ├── FilmeRepository.java
+│   │   │   └── GeneroRepository.java
+│   │   └── service/
+│   │       └── StartupDataLoader.java
+│   ├── pom.xml
+│   └── src/main/resources/application.properties
+└── frontend/
+    ├── index.html
+    ├── filmes.html
+    └── scripts/
+        └── main.js
+
+```
+
+---
+
+# 🛠️ **Guia de Instalação e Execução**
+
+## **Backend (Spring Boot)**
+
+### **1. Configurar banco no `application.properties`**
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/filmes?useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=senha
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+server.port=8080
+spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
+
+
+```
+
+### **2. Rodar o backend**
+
+---
+
+# 🌐 **Documentação da API**
+
+## **Entidades**
+
+### **🎭 Gênero**
+
+```json
+{
+  "id": 1,
+  "name": "Ação"
+}
+```
+
+### **🎬 Filme**
+
+```json
+{
+  "id": 1,
+  "title": "Matrix",
+  "year": 1999,
+  "director": "Wachowski",
+  "coverUrl": "https://...jpg",
+  "genre": {
+    "id": 1,
+    "name": "Ação"
+  }
+}
+```
+
+---
+
+# 📡 **Endpoints**
+
+## **Gêneros**
+
+| Método | Endpoint | Descrição |
+| --- | --- | --- |
+| GET | /generos | Lista todos |
+| POST | /generos | Cria novo |
+| PUT | /generos/{id} | Atualiza |
+| DELETE | /generos/{id} | Remove |
+
+## **Filmes**
+
+| Método | Endpoint | Descrição |
+| --- | --- | --- |
+| GET | /filmes | Lista todos |
+| POST | /filmes | Cria |
+| PUT | /filmes/{id} | Atualiza |
+| DELETE | /filmes/{id} | Remove |
+
+---
+
+# 🖥️ **Exemplos de Requisição**
+
+### **POST /filmes**
+
+```json
+{
+  "title": "Matrix",
+  "year": 1999,
+  "director": "Wachowski",
+  "coverUrl": "https://imagem.jpg",
+  "genre": { "id": 1 }
+}
+```
+
+---
+
+# 📎 **Links Importantes**
+
+🔗 **Trello:** *"https://trello.com/b/2AJ9CFr8/devsys"*
+
+🔗 **Figma:** *adicionar*
+
