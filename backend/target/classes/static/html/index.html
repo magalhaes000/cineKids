@@ -1,0 +1,125 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Disney+ Clone — CRUD de Filmes</title>
+
+  <!-- Fonte similar -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="header__left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="logo" class="logo">
+      <nav class="main-nav">
+        <a class="nav-link active">Início</a>
+        <a class="nav-link">Pesquisar</a>
+        <a class="nav-link">Minha Lista</a>
+        <a class="nav-link">Originais</a>
+        <a class="nav-link">Filmes</a>
+        <a class="nav-link">Séries</a>
+      </nav>
+    </div>
+
+    <div class="header__right">
+      <button id="open-register" class="btn ghost">Cadastrar Usuário</button>
+      <div id="user-badge" class="user-badge" title="Perfil" hidden>
+        <span id="user-initials"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / BANNER -->
+  <section class="hero">
+    <div class="hero__slider" id="heroSlider"></div>
+  </section>
+
+  <!-- MARCAS (pequenas caixas) -->
+  <section class="brands container">
+    <div class="brand">Disney</div>
+    <div class="brand">PIXAR</div>
+    <div class="brand">MARVEL</div>
+    <div class="brand">STAR WARS</div>
+    <div class="brand">NAT GEO</div>
+  </section>
+
+  <!-- FILTROS DE GÊNERO -->
+  <section class="filters container">
+    <div id="genre-chips" class="chips"></div>
+    <label class="chip">
+      <input type="checkbox" id="filter-kids"> Só infantil
+    </label>
+
+    <div class="actions">
+      <button id="open-add-movie" class="btn primary">+ Cadastrar Filme</button>
+      <button id="reset-data" class="btn ghost">Resetar Dados</button>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO: carrosséis por seção -->
+  <main class="container" id="content">
+    <!-- Dinamicamente preenchido por JS -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <small>Projeto educacional — Disney+ style — CRUD local</small>
+  </footer>
+
+  <!-- MODAL: FORMULÁRIO DE FILME -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button id="close-modal" class="close">&times;</button>
+      <h3 id="modal-title">Cadastrar Filme</h3>
+
+      <form id="movie-form">
+        <input type="hidden" id="movie-id" />
+        <label>Título
+          <input id="title" required />
+        </label>
+
+        <label>Gêneros (separe por vírgula)
+          <input id="genres" placeholder="Ex: Aventura, Família, Animação" />
+        </label>
+
+        <label>Imagem (URL)
+          <input id="image" placeholder="https://..." />
+        </label>
+
+        <label>
+          <input type="checkbox" id="isKids"> Conteúdo Infantil
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Salvar</button>
+          <button type="button" id="cancel" class="btn ghost">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: REGISTRO USUÁRIO -->
+  <div id="modal-user" class="modal hidden">
+    <div class="modal-card">
+      <button id="close-user-modal" class="close">&times;</button>
+      <h3>Cadastrar Usuário</h3>
+      <form id="user-form">
+        <label>Nome
+          <input id="user-name" required />
+        </label>
+        <label>E-mail
+          <input id="user-email" type="email" required />
+        </label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Cadastrar</button>
+          <button id="cancel-user" class="btn ghost" type="button">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
