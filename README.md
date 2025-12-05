@@ -59,17 +59,17 @@ projeto-filmes/
 ### **1. Configurar banco no `application.properties`**
 
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306/filmes?useSSL=false&allowPublicKeyRetrieval=true
+spring.application.name=projeto-cine-kids
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/db_cineKids?useSSL=false
 spring.datasource.username=root
-spring.datasource.password=senha
+spring.datasource.password=12345
 
-spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+spring.jpa.defer-datasource-initialization=true
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
-
-server.port=8080
-spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
+spring.jpa.hibernate.ddl-auto=update
 
 
 ```
@@ -87,7 +87,7 @@ spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
 ```json
 {
   "id": 1,
-  "name": "Ação"
+  "fk_genero": "Infantil"
 }
 ```
 
@@ -100,7 +100,6 @@ spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
   "classificacao": "Livre",
   "idioma": "Português",
   "sinopse": "conta a história de Rapunzel, uma princesa com cabelos mágicos dourados, mantida presa numa torre por anos pela vilã Mamãe Gothel, que usa seu cabelo para se manter jovem, mas Rapunzel sonha em ver as lanternas flutuantes que aparecem todo ano no seu aniversário.",
-  "fk_genero": 2
 }
 
 
@@ -141,7 +140,6 @@ spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
   "classificacao": "10",
   "idioma": "Português",
   "sinopse": "Em uma cidade formada por animais, a policial coelha Judy Hopps se une ao raposo Nick Wilde para desvendar um mistério que ameaça Zootopia.",
-  "fk_genero": 1
 }
 
 ```

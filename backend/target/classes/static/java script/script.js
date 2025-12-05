@@ -1,4 +1,3 @@
-
 const API_MOVIES = "/api/movies";
 const API_GENRES = "/api/genres";
 

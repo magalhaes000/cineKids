@@ -48,7 +48,7 @@ public class Filme {
 	
 	@Column(name = "idioma")
 	private String idioma;
-
+	
 	public Filme() {
 	}
 
