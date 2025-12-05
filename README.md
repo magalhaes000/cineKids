@@ -95,16 +95,15 @@ spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
 
 ```json
 {
-  "id": 1,
-  "title": "Matrix",
-  "year": 1999,
-  "director": "Wachowski",
-  "coverUrl": "https://...jpg",
-  "genre": {
-    "id": 1,
-    "name": "Ação"
-  }
+  "titulo": "Enrolados",
+  "anoLancamento": 2010,
+  "classificacao": "Livre",
+  "idioma": "Português",
+  "sinopse": "conta a história de Rapunzel, uma princesa com cabelos mágicos dourados, mantida presa numa torre por anos pela vilã Mamãe Gothel, que usa seu cabelo para se manter jovem, mas Rapunzel sonha em ver as lanternas flutuantes que aparecem todo ano no seu aniversário.",
+  "fk_genero": 2
 }
+
+
 ```
 
 ---
@@ -137,12 +136,14 @@ spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
 
 ```json
 {
-  "title": "Matrix",
-  "year": 1999,
-  "director": "Wachowski",
-  "coverUrl": "https://imagem.jpg",
-  "genre": { "id": 1 }
+  "titulo": "Zootopia",
+  "anoLancamento": 2016,
+  "classificacao": "10",
+  "idioma": "Português",
+  "sinopse": "Em uma cidade formada por animais, a policial coelha Judy Hopps se une ao raposo Nick Wilde para desvendar um mistério que ameaça Zootopia.",
+  "fk_genero": 1
 }
+
 ```
 
 ---

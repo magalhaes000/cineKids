@@ -48,6 +48,10 @@ public class Filme {
 	
 	@Column(name = "idioma")
 	private String idioma;
+	
+	@NotBlank (message = "A Seleção De Usuário É Obrigatório!")
+	@Column(name = "selecao_usuario")
+	private String selecaoUsuario;
 
 	public Filme() {
 	}
@@ -107,4 +111,14 @@ public class Filme {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
+	public String getSelecaoUsuario() {
+		return selecaoUsuario;
+	}
+
+	public void setSelecaoUsuario(String selecaoUsuario) {
+		this.selecaoUsuario = selecaoUsuario;
+	}
+	
+	
 }
