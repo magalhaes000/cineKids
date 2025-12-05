@@ -1,13 +1,103 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CineKids — Plataforma Infantil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+  <!-- NAVBAR -->
+  <header class="ks-header">
+    <div class="ks-left">
+      <div class="ks-logo">
+        <!-- logo redondo -->
+        <div class="logo-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#FF3B30"/>
+            <path d="M9 8l6 4-6 4V8z" fill="#fff"/>
+          </svg>
+        </div>
+        <span class="logo-text">CineKids</span>
+      </div>
+
+      <nav class="ks-nav" role="navigation" aria-label="Menu principal">
+        <button class="nav-btn active" data-view="home">Início</button>
+        <button class="nav-btn" data-view="search">Pesquisar</button>
+        <button class="nav-btn" data-view="list">Minha Lista</button>
+      </nav>
+    </div>
+
+    <div class="ks-right">
+      <button id="open-register" class="ks-btn ks-btn-ghost">Entrar</button>
+      <div id="user-badge" class="user-badge" title="Perfil" hidden>
+        <span id="user-initials"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ks-hero">
+    <div class="hero-track" id="heroSlider" aria-live="polite"></div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="ks-filters container">
+    <div id="genre-chips" class="chips" aria-label="Gêneros"></div>
+
+    <label class="chip">
+      <input type="checkbox" id="filter-kids"> Só infantil
+    </label>
+
+    <div class="actions">
+      <button id="open-add-movie" class="ks-btn ks-btn-primary">+ Adicionar</button>
+      <button id="reset-data" class="ks-btn ks-btn-ghost">Resetar</button>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <main class="container" id="content" role="main"></main>
+
+  <!-- FOOTER -->
+  <footer class="ks-footer">
+    <small>Projeto educacional — CineKids — CRUD local</small>
+  </footer>
+
+  <!-- MODAL: FORM FILME -->
+  <div id="modal" class="ks-modal hidden" role="dialog" aria-modal="true">
+    <div class="ks-modal-card" role="document">
+      <button id="close-modal" class="close" aria-label="Fechar">&times;</button>
+      <h3 id="modal-title">Cadastrar Conteúdo</h3>
+
+      <form id="movie-form">
+        <input type="hidden" id="movie-id" />
+        <label>Título
+          <input id="title" required />
+        </label>
+
+        <label>Gêneros (separe por vírgula)
+          <input id="genres" placeholder="Ex: Animação, Família" />
+        </label>
+
+        <label>Imagem (URL)
+          <input id="image" placeholder="https://..." />
+        </label>
+
+        <label class="kid-toggle">
+          <input type="checkbox" id="isKids"> Conteúdo Infantil
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="ks-btn ks-btn-primary">Salvar</button>
+          <button type="button" id="cancel" class="ks-btn ks-btn-ghost">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: USUÁRIO -->
+
+  <script src="script.js"></script>
 </body>
 </html>
-
